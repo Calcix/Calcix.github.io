@@ -1,0 +1,68 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Landing Page */
+  .landing-page {
+    width: 100vw;
+    height: 100vh;
+    background: url('assets/background.jpg') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  
+  /* Play Button */
+  .play-button {
+    background-color: #8B0000; /* Dark red */
+    color: white;
+    font-size: 24px;
+    padding: 15px 60px;
+    border: 3px solid #FF4500;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+  }
+  
+  .play-button:hover {
+    background-color: #B22222; /* Lighter red on hover */
+    border-color: #FF4500; /* Orange-red border on hover */
+  }
+  
+  /* Game Area */
+  .game-area {
+    width: 4000px;
+    height: 4000px;
+    position: relative;
+    overflow: hidden; /* Hide overflow to create the effect of a camera */
+    background: url('assets/background.jpg') repeat; /* Repeat background both horizontally and vertically */
+    background-size: 100% 100%; /* Make sure the background covers the whole area */
+  }
+  
+  #character {
+    width: 64px; /* Width of a single sprite frame */
+    height: 64px; /* Height of a single sprite frame */
+    position: absolute;
+    bottom: 400px; /* Offset from the bottom */
+    right: 800px; /* Offset from the right */
+    transform: translate(-50%, -50%);
+    background-image: url('assets/spritesheet.png');
+    background-size: 832px 2944px; /* Size of the entire sprite sheet */
+    background-repeat: no-repeat; /* Prevent repeating of the sprite sheet */
+    background-position: 0px -640px; /* Start at the first frame */
+    z-index: 2;
+  }
+  
+  html, body {
+    position: fixed; /* Prevent scrolling on the entire page */
+  }
+  
+  body {
+    background-color: blue; 
+  }
+  
