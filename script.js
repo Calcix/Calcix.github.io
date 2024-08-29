@@ -67,18 +67,18 @@ document.addEventListener('keydown', (event) => {
   character.style.top = `${top}px`;
   character.style.left = `${left}px`;
 
-   // Cancel any previous animation frame to avoid multiple animations running
-   cancelAnimationFrame(animationFrameId);
+  // Cancel any previous animation frame to avoid multiple animations running
+  cancelAnimationFrame(animationFrameId);
 
-   // Update the camera position and animate it
-   animationFrameId = requestAnimationFrame(() => moveCamera(left, top));
- });
+  // Update the camera position and animate it
+  animationFrameId = requestAnimationFrame(() => moveCamera(left, top));
+});
 
 // Keyup event listener to stop the movement
 document.addEventListener('keyup', () => {
   moving = false; // Stop the animation when no key is pressed
   // Stop the camera movement animation
-  cancelAnimationFrame(animationFrameId); 
+  cancelAnimationFrame(animationFrameId);
 });
 
 // Function to move the camera smoothly
@@ -96,12 +96,20 @@ window.addEventListener('load', () => {
   const left = parseInt(window.getComputedStyle(character).getPropertyValue('left'));
 
   // Center the camera on the character
-  moveCamera(left, top); 
+  moveCamera(left, top);
+});
+
+// Adjust the game area and camera on window resize
+window.addEventListener('resize', () => {
+  // Center the camera on the character after resizing
+  const top = parseInt(window.getComputedStyle(character).getPropertyValue('top'));
+  const left = parseInt(window.getComputedStyle(character).getPropertyValue('left'));
+  moveCamera(left, top);
 });
 
 gameArea.addEventListener('wheel', (event) => {
-  event.preventDefault(); 
+  event.preventDefault();
 });
 gameArea.addEventListener('touchmove', (event) => {
-  event.preventDefault(); 
+  event.preventDefault();
 });
