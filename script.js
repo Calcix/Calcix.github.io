@@ -1,3 +1,6 @@
+// Global variable to store the requestAnimationFrame ID
+let animationFrameId;
+
 const character = document.querySelector('#character');
 const gameArea = document.querySelector('.game-area');
 
@@ -64,9 +67,12 @@ document.addEventListener('keydown', (event) => {
   character.style.top = `${top}px`;
   character.style.left = `${left}px`;
 
-  // Update the camera position
-  moveCamera(left, top); // Call the function to keep the camera centered on the character
-});
+   // Cancel any previous animation frame to avoid multiple animations running
+   cancelAnimationFrame(animationFrameId);
+
+   // Update the camera position and animate it
+   animationFrameId = requestAnimationFrame(() => moveCamera(left, top));
+ });
 
 // Keyup event listener to stop the movement
 document.addEventListener('keyup', () => {
