@@ -151,3 +151,33 @@
   right: calc(800px - 288px); 
   z-index: 2; /* Ensure it is behind the character if needed */
 }
+
+/* Food Container */
+.food-container {
+  position: absolute;
+  bottom: 1588px; /* Adjust as needed */
+  right: calc(800px + 32px); /* Adjust as needed */
+  z-index: 2; /* Ensure it is above other elements if needed */
+  width: 128px; /* Width of the food image */
+  height: 41px; /* Height of the food image */
+}
+
+/* Food Image */
+#food-image {
+  width: 128px; /* Adjust to fit the image dimensions */
+  height: 41px; /* Adjust to fit the image dimensions */
+}
+
+/* About Me Popup Text */
+#about-me {
+  display: none; /* Initially hidden */
+  position: absolute;
+  bottom: 50px; /* Position text at the bottom of .food-container */
+  right: 5px; /* Position text at the right of .food-container */
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  z-index: 10; /* Ensure it is above other elements */
+  font-size: 12px;
+}

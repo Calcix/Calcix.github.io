@@ -113,3 +113,34 @@ gameArea.addEventListener('wheel', (event) => {
 gameArea.addEventListener('touchmove', (event) => {
   event.preventDefault();
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+  const character = document.getElementById('character');
+  const foodImage = document.getElementById('food-image');
+  const aboutMe = document.getElementById('about-me');
+
+  function getRect(element) {
+    return element.getBoundingClientRect();
+  }
+
+  function isNear(characterRect, foodImageRect, distance) {
+    // Calculate distance between the character and the food image
+    const dx = Math.abs(characterRect.left + characterRect.width / 2 - (foodImageRect.left + foodImageRect.width / 2));
+    const dy = Math.abs(characterRect.top + characterRect.height / 2 - (foodImageRect.top + foodImageRect.height / 2));
+    return (dx < distance && dy < distance);
+  }
+
+  function checkProximity() {
+    const characterRect = getRect(character);
+    const foodImageRect = getRect(foodImage);
+
+    if (isNear(characterRect, foodImageRect, 100)) { // Adjust distance as needed
+      aboutMe.style.display = 'block';
+    } else {
+      aboutMe.style.display = 'none';
+    }
+  }
+
+  // Continuously check proximity
+  setInterval(checkProximity, 100); // Check every 100ms
+});
