@@ -55,7 +55,7 @@
     background-size: 832px 2944px; /* Size of the entire sprite sheet */
     background-repeat: no-repeat; /* Prevent repeating of the sprite sheet */
     background-position: 0px -640px; /* Start at the first frame */
-    z-index: 2;
+    z-index: 4;
   }
   
   html, body {
@@ -65,4 +65,77 @@
   body {
     background-color: blue; 
   }
-  
+
+  /* Wooden Path */
+#wooden-path {
+  width: 96px; /* Width covering exactly 3 tiles horizontally (32px each) */
+  height: 1000px; /* Height covering exactly 3 tiles vertically (32px each) */
+  background-image: url('assets/wood-path.png'); /* Path to full tile-set */
+  background-repeat: repeat-y; /* Repeat the background image vertically */
+  position: absolute;
+  bottom: 400px;
+  right: calc(800px + 32px); 
+  z-index: 3; /* Ensure it is behind the character */
+}
+
+/* Boat */
+#boat {
+  width: 123px; 
+  height: 64px; 
+  background-image: url('assets/boat.png'); /* Path to full tile-set */
+  position: absolute;
+  bottom: 200px;
+  right: calc(800px - 288px); 
+  z-index: 1; /* Ensure it is behind the character */
+}
+
+  /* Deck */
+#deck {
+  width: 1248px; /* Width must be a multiple of deck's width (96 x 13 = 1248) */
+  height: 108px; /* Adjust to fit deck image */
+  background-image: url('assets/deck.png'); /* Path to deck image */
+  background-size: contain; /* Ensure the image covers the entire element */
+  position: absolute;
+  background-repeat: repeat-x; /* Repeat the background image horizontally */
+  bottom: 1390px; /* Adjust the bottom position as needed */
+  right: calc(800px - 288px); 
+  z-index: 2; /* Ensure it is behind the character if needed */
+}
+
+/* Deck - middle */
+#deck-middle {
+  width: 1248px; /* Width must be a multiple of deck's width (96 x 13 = 1248) */
+  height: 108px; /* Same height as the bottom row */
+  background-image: url('assets/deck.png'); /* Same deck image */
+  background-repeat: repeat-x; /* Repeat the background image horizontally */
+  background-size: contain; /* Maintain original width, fit height */
+  position: absolute;  
+  bottom: calc(1390px + 99px); /* Position of the top row, directly above the bottom row */
+  right: calc(800px - 288px); 
+  z-index: 1; /* Ensure it is behind the character if needed */
+}
+
+/* Deck - top */
+#deck-top {
+  width: 1248px; /* Width must be a multiple of deck's width (96 x 13 = 1248) */
+  height: 108px; /* Same height as the bottom row */
+  background-image: url('assets/deck.png'); /* Same deck image */
+  background-repeat: repeat-x; /* Repeat the background image horizontally */
+  background-size: contain; /* Maintain original width, fit height */
+  position: absolute;  
+  bottom: calc(1489px + 99px); /* Position of the top row, directly above the bottom row */
+  right: calc(800px - 288px); 
+  z-index: 0; /* Ensure it is behind the character if needed */
+}
+
+/* Food stand */
+#food-stand {
+  width: 64px; /* Width must be a multiple of deck's width (96 x 13 = 1248) */
+  height: 96px; /* Same height as the bottom row */
+  background-image: url('assets/food-stand.png'); /* Same deck image */
+  background-size: contain; /* Maintain original width, fit height */
+  position: absolute;  
+  bottom: 1681px;
+  right: calc(800px - 288px); 
+  z-index: 1; /* Ensure it is behind the character if needed */
+}
