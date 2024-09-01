@@ -162,8 +162,8 @@ function toggleMessage() {
   isFirstMessage = !isFirstMessage;
 }
 
-// Start the interval to toggle messages every 5 seconds
-intervalId = setInterval(toggleMessage, 5000);
+// Start the interval to toggle messages every 4 seconds
+intervalId = setInterval(toggleMessage, 4000);
 
 // Function to stop the message toggle and hide the welcome message when an arrow key is pressed
 function stopMessageToggle() {

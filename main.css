@@ -203,6 +203,18 @@
   right: calc(800px + 600px); 
   z-index: 1; 
 }
+
+/* Plant */
+#plant2 {
+  width: 96px; 
+  height: 114px; 
+  background-image: url('assets/plant.png'); 
+  position: absolute;
+  bottom: 900px;
+  right: calc(800px - 400px); 
+  z-index: 1; 
+}
+
 #welcome {
   position: absolute;
   background-image: url('assets/welcome.png'); 
