@@ -55,7 +55,7 @@
     background-size: 832px 2944px; /* Size of the entire sprite sheet */
     background-repeat: no-repeat; /* Prevent repeating of the sprite sheet */
     background-position: 0px -640px; /* Start at the first frame */
-    z-index: 4;
+    z-index: 5;
   }
   
   html, body {
@@ -225,4 +225,16 @@
   width: 211px; /* Set a width for the welcome message */
   height: 123px; /* Set a height for the welcome message */
   z-index: 5; /* Ensure it is above the character */
+}
+
+/* Wooden Path */
+#wooden-path2 {
+  width: 96px; /* Width covering exactly 3 tiles horizontally (32px each) */
+  height: 1000px; /* Height covering exactly 3 tiles vertically (32px each) */
+  background-image: url('assets/wood-path.png'); /* Path to full tile-set */
+  background-repeat: repeat-y; /* Repeat the background image vertically */
+  position: absolute;
+  bottom: 1695px;
+  right: calc(800px + 675px); 
+  z-index: 0; /* Ensure it is behind the character */
 }
