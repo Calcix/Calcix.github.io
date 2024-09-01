@@ -193,6 +193,16 @@
   z-index: 1; /* Ensure it is behind the character */
 }
 
+/* Plant */
+#plant {
+  width: 96px; 
+  height: 114px; 
+  background-image: url('assets/plant.png'); 
+  position: absolute;
+  bottom: 700px;
+  right: calc(800px + 600px); 
+  z-index: 1; 
+}
 #welcome {
   position: absolute;
   background-image: url('assets/welcome.png'); 
