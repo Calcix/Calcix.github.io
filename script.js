@@ -144,3 +144,37 @@ document.addEventListener('DOMContentLoaded', function () {
   // Continuously check proximity
   setInterval(checkProximity, 100); // Check every 100ms
 });
+
+// Initialize variables
+let isFirstMessage = true;
+let intervalId;
+
+// Function to change the welcome message
+function toggleMessage() {
+  const welcomeDiv = document.getElementById('welcome');
+  
+  if (isFirstMessage) {
+    welcomeDiv.style.backgroundImage = "url('assets/welcome2.png')";
+  } else {
+    welcomeDiv.style.backgroundImage = "url('assets/welcome.png')";
+  }
+  
+  isFirstMessage = !isFirstMessage;
+}
+
+// Start the interval to toggle messages every 5 seconds
+intervalId = setInterval(toggleMessage, 5000);
+
+// Function to stop the message toggle and hide the welcome message when an arrow key is pressed
+function stopMessageToggle() {
+  clearInterval(intervalId); // Stop the interval
+  const welcomeDiv = document.getElementById('welcome');
+  welcomeDiv.style.display = 'none'; // Hide the welcome message
+}
+
+// Add event listener for arrow key presses
+document.addEventListener('keydown', (event) => {
+  if (['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(event.key)) {
+    stopMessageToggle(); // Stop the toggling and hide the message
+  }
+});

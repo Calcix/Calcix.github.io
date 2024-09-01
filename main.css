@@ -192,3 +192,15 @@
   right: calc(800px + 900px); 
   z-index: 1; /* Ensure it is behind the character */
 }
+
+#welcome {
+  position: absolute;
+  background-image: url('assets/welcome.png'); 
+  background-size: contain; /* Scale the image to fit the div */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
+  bottom: calc(400px + 80px); /* Position above the character's head */
+  right: calc(800px - 120px); /* Position to the right of the character */
+  width: 211px; /* Set a width for the welcome message */
+  height: 123px; /* Set a height for the welcome message */
+  z-index: 5; /* Ensure it is above the character */
+}
